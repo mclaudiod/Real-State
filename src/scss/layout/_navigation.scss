@@ -1,0 +1,106 @@
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet {
+        align-items: flex-end;
+    };
+
+    .dark-mode-button {
+        width: 3rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        filter: invert(100%); // Reverses the color scheme
+
+        &:hover {
+            cursor: pointer;
+        };
+
+        @include tablet {
+            margin-top: 0;
+        };
+    };
+};
+
+.bar {
+    display: flex;
+    align-items: center;
+    flex-direction: column; // Makes the flexbox go from top to bottom, "piling up" the content
+    padding-top: 3rem;
+
+    img {
+        width: 30rem;
+        height: auto;
+    };
+
+    @include tablet {
+        flex-direction: row; // Makes the flexblox go from left to right
+        justify-content: space-between; // Puts separation between the objects in flexbox
+        align-items: flex-end;
+        img {
+            width: 30rem;
+            height: auto;
+        };
+    };
+};
+
+.navigation {
+    visibility: hidden;
+    opacity: 0;
+    // height: 0;
+    transition: visibility .3s ease-in-out, opacity 0.5s linear; //, height 0.5s linear
+
+    @include tablet {
+        display: flex;
+        align-items: center; // Centers the content in vertical manner
+        visibility: visible;
+        opacity: 1;
+    };
+
+    a {
+        color: $white;
+        text-decoration: none;
+        font-size: 2.2rem;
+        display: block;
+        text-align: center;
+
+        &:hover {
+            color: $green;
+        };
+
+        @include tablet {
+            margin-right: 2rem;
+            font-size: 1.8rem;
+
+            &:last-of-type {
+                margin-right: 0;
+            };
+        };
+    };
+};
+
+/** Responsive Menu **/
+
+.mobile-menu {
+    @include tablet {
+        display: none;
+    };
+
+    img {
+        width: 5rem;
+    };
+};
+
+.show {
+    visibility: visible;
+    opacity: 1;
+    // height: auto;
+
+    // display: flex;
+    // flex-direction: column;
+
+    // @include tablet {
+    //     flex-direction: row;
+    // };
+};

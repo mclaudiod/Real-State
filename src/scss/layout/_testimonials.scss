@@ -1,0 +1,28 @@
+.testimonial {
+    background-color: $green;
+    font-size: 2.4rem;
+    padding: 2rem;
+    color: $white;
+    border-radius: 2rem;
+
+    blockquote { // If you want to position an element manually then you have to put position relative in the father and then absolute in the son, and then use top, bottom, left and right to position it relative to the position of the father
+        padding-left: 5rem;
+        position: relative;
+
+        &::before {
+            content: "";
+            background-image: url(../img/comilla.svg);
+            background-repeat: no-repeat;
+            width: 6rem;
+            height: 8rem;
+            display: block;
+            position: absolute;
+            left: -2rem;
+        };
+    };
+
+    p {
+        text-align: right;
+        color: $white;
+    };
+};

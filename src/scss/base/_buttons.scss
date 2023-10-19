@@ -1,0 +1,20 @@
+.yellow-button {
+    @include button($yellow, inline-block);
+};
+
+.yellow-button-block {
+    @include button($yellow, block); // Display blog occupies all the available space
+};
+
+.green-button {
+    @include button($green, inline-block);
+};
+
+.red-button-block {
+    @include button($red, block);
+    width: 100%;
+};
+
+.green-button-block {
+    @include button($green, block);
+};
